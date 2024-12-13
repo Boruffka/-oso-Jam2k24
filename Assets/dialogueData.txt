@@ -1,6 +1,45 @@
-this is dialogue;
-this is the second line of dialogue;
-this will now end;#
-new character dialogue;
-new character 2nd dialogue;
-new character dialogue finish;#
+Qintro;
+Qintro2;
+#
+Qname;
+#
+Qentry1;
+Qentry2;
+#
+Qq1;
+#
+Qq2;
+#
+Qr1 1;
+Qr1 2;
+#
+Qr2 1;
+Qr2 2;
+#
+QfilesInfo;
+#
+1;
+#
+Fintro;
+Fintro2;
+#
+Fname;
+#
+Fentry1;
+Fentry2;
+#
+Fq1;
+#
+Fq2;
+#
+Fr1 1;
+Fr1 2;
+#
+Fr2 1;
+Fr2 2;
+#
+FfilesInfo;
+#
+1;
+#
+

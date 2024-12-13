@@ -4,7 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 public class TextManager : MonoBehaviour
 {
-    private List<CharacterData> charactersLoaded;
+    [SerializeField] private List<CharacterData> charactersLoaded;
 
     void Start()
     {
@@ -30,13 +30,29 @@ public class TextManager : MonoBehaviour
         string loadedData = reader.ReadToEnd();
         string loadedLine = "";
         int inputField = 0;
-        for (int i = 0; i < loadedData.Length; i++)
-        {
-            switch(inputField)
-            {
 
+        List<string> intro = new List<string>();
+        string charName = null;
+        List<string> entry = new List<string>();
+        string q1 = null;
+        string q2 = null;
+        List<string> response1 = new List<string>();
+        List<string> response2 = new List<string>();
+        string filesInfo = null;
+        bool guilty = false;
+
+        Debug.Log(loadedData);
+
+        while((loadedLine = reader.ReadLine()) != null)
+        {
+            if (loadedLine[loadedLine.Length-1]=='#')
+            {
+                inputField++;
+                if (inputField == 9) inputField = 8;
             }
+            Debug.Log(inputField + " " + loadedLine);
         }
+
         reader.Close();
     }
 }

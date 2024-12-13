@@ -3,21 +3,21 @@ using System.Collections.Generic;
 
 public class CharacterData
 {
-    List<string> introDialogue;         // [1] lines of intro dialogue (judge)
+    public List<string> introDialogue;         // [0] lines of intro dialogue (judge)
 
-    string characterName;               // [2] single line
+    public string characterName;               // [1] single line
 
-    Sprite characterSprite;             // character sprite
+    public Sprite characterSprite;             // character sprite
 
-    List<string> entryDialogue;         // [3] lines of entry dialogue
+    public List<string> entryDialogue;         // [2] lines of entry dialogue
 
-    string questionOne;                 // [4]
-    string questionTwo;                 // [5] two questions, short
+    public string questionOne;                 // [3]
+    public string questionTwo;                 // [4] two questions, short
 
-    List<string> responseOneDialogue;   // [6] response to question one
-    List<string> responseTwoDialogue;   // [7] response to question two
+    public List<string> responseOneDialogue;   // [5] response to question one
+    public List<string> responseTwoDialogue;   // [6] response to question two
 
-    string filesInfo;                   // box of info +/- 14 lines
+    public string characterFilesInfo;          // box of info +/- 14 lines
 
-    bool isGuilty;                      // correct verdict (0/1)
+    public bool isGuilty;                      // correct verdict (0/1)
 }
