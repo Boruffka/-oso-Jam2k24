@@ -1,0 +1,6 @@
+this is dialogue;
+this is the second line of dialogue;
+this will now end;#
+new character dialogue;
+new character 2nd dialogue;
+new character dialogue finish;#
