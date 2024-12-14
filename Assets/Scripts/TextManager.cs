@@ -8,10 +8,8 @@ public class TextManager : MonoBehaviour
 
     void Start()
     {
-        // name the file "dialogueData.txt"
+        // --- name the file "dialogueData.txt" ----
         LoadCharacters();
-        Debug.Log(charactersLoaded.Count);
-        Debug.Log(charactersLoaded[0].introDialogue[0]);
     }
 
     // s - single, m - multiple lines
@@ -48,7 +46,7 @@ public class TextManager : MonoBehaviour
             if (loadedLine == "#")
             {
                 inputField++;
-                if (inputField >= 8)
+                if (inputField > 8)
                 {
                     loadedCharacter.introDialogue = intro;
                     loadedCharacter.characterName = charName;
