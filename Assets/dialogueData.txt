@@ -13,11 +13,11 @@ Druga część odpowiedzi na pytanie drugie.
 #
 Imię postaci
 #
-Pytanie pierwsze dla postaci
+Pytanie pierwsze
 #
 Pełne pytanie pierwsze dla postaci.
 #
-Pytanie drugie dla postaci
+Pytanie drugie
 #
 Pełne pytanie drugie dla postaci.
 #
@@ -40,11 +40,11 @@ Druga część odpowiedzi na pytanie drugie.
 #
 Imię drugiej postaci
 #
-Pytanie pierwsze dla drugiej postaci
+Pytanie pierwsze 2
 #
 Pełne pytanie pierwsze dla drugiej postaci.
 #
-Pytanie drugie dla drugiej postaci
+Pytanie drugie 2
 #
 Pełne pytanie drugie dla drugiej postaci.
 #

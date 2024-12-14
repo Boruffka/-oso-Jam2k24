@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 883bfd5fe2e0eca4798d7dd8e9a85e25
+guid: 45e568161d787a649bbd80e2d481bd4a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8950804510995902453
-    second: STRONA DRUGA_0
+      213: 5274374625941171274
+    second: "Wr\xF3\u0107_0"
+  - first:
+      213: -4405219087347307856
+    second: "Wr\xF3\u0107_1"
+  - first:
+      213: -7841244923722090121
+    second: "Wr\xF3\u0107_2"
+  - first:
+      213: 640896352381762412
+    second: "Wr\xF3\u0107_3"
+  - first:
+      213: 133485698325818274
+    second: "Wr\xF3\u0107_4"
+  - first:
+      213: -8920927672947324961
+    second: "Wr\xF3\u0107_5"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: STRONA DRUGA_0
+      name: "Wr\xF3\u0107_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 579
-        height: 1080
+        y: 32
+        width: 85
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +169,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b00102c78ba58c380800000000000000
-      internalID: -8950804510995902453
+      spriteID: a4cae8707c7523940800000000000000
+      internalID: 5274374625941171274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Wr\xF3\u0107_1"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 34
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0baa4e474948dd2c0800000000000000
+      internalID: -4405219087347307856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Wr\xF3\u0107_2"
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 45
+        width: 32
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779b5bc594d4e2390800000000000000
+      internalID: -7841244923722090121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Wr\xF3\u0107_3"
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 32
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6bfe8d36dbe4e800800000000000000
+      internalID: 640896352381762412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Wr\xF3\u0107_4"
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 67
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab2e4f098c3ad100800000000000000
+      internalID: 133485698325818274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Wr\xF3\u0107_5"
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd7c50beb8f723480800000000000000
+      internalID: -8920927672947324961
       vertices: []
       indices: 
       edges: []
@@ -164,7 +289,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -173,7 +298,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Wr\xF3\u0107_0": 5274374625941171274
+      "Wr\xF3\u0107_1": -4405219087347307856
+      "Wr\xF3\u0107_2": -7841244923722090121
+      "Wr\xF3\u0107_3": 640896352381762412
+      "Wr\xF3\u0107_4": 133485698325818274
+      "Wr\xF3\u0107_5": -8920927672947324961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
