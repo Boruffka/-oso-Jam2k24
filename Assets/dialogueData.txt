@@ -21,26 +21,26 @@ W jednej linii, wszystkie informacje ciągłym tekstem dotyczące akt prawnych p
 #
 0
 #
-Pierwsza część wypowiedzi sędziego przy drugiej postaci.
-Druga część wypowiedzi sędziego przy drugiej postaci.
-#
-Imię drugiej postaci
+Pierwsza część wypowiedzi sędziego przy starcie.
+Druga część wypowiedzi sędziego przy starcie.
 #
 Pierwsza część wypowiedzi drugiej postaci po wprowadzeniu na salę.
 Druga część wypowiedzi drugiej postaci po wprowadzeniu na salę.
 Trzecia część wypowiedzi drugiej postaci po wprowadzeniu na salę.
 #
-Pytanie pierwsze dla drugiej postaci 
+Pierwsza część odpowiedzi na pytanie pierwsze.
+Druga część odpowiedzi na pytanie pierwsze.
 #
-Pytanie drugie dla drugiej postaci 
+Pierwsza część odpowiedzi na pytanie drugie.
+Druga część odpowiedzi na pytanie drugie.
 #
-Pierwsza część odpowiedzi drugiej postaci na pytanie pierwsze.
-Druga część odpowiedzi drugiej postaci na pytanie pierwsze.
+Imię drugiej postaci
 #
-Pierwsza część odpowiedzi drugiej postaci na pytanie drugie.
-Druga część odpowiedzi drugiej postaci na pytanie drugie.
+Pytanie pierwsze dla drugiej postaci
+#
+Pytanie drugie dla drugiej postaci
 #
 W jednej linii, wszystkie informacje ciągłym tekstem dotyczące akt prawnych drugiej postaci, wszystko trafia tutaj.
 #
-1
+0
 #

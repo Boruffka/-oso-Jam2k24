@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // GameObjects or TMPro references
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI characterNameText;
+    [SerializeField] private TextMeshProUGUI characterFilesText;
 
     private Coroutine typingText;
     [SerializeField] private bool currentlyTyping;
@@ -21,49 +23,59 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
+        characterNameText = GameObject.Find("CharacterName  Text").GetComponent<TextMeshProUGUI>();
+        characterFilesText = GameObject.Find("CharacterFilesText").GetComponent<TextMeshProUGUI>();
+
     }
 
     void Start()
     {
-
+        SetTextField(characterFilesText, characterData[0].characterFilesInfo);
+        SetTextField(characterNameText, characterData[0].characterName);
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        switch(dialogueStageNumber)
         {
-            if (typingText != null)
-            {
-                StopCoroutine(typingText);
-            }
-            if (currentlyTyping)
-            {
-                dialogueText.maxVisibleCharacters = Int32.MaxValue;
-                currentlyTyping = false;
-            }
-            else
-            {
-                currentlyTyping = true;
-                typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[dialogueFieldNumber].introDialogue[dialogueLineNumber++], 0.01f));
-                if (dialogueLineNumber > characterData[dialogueFieldNumber].introDialogue.Count)
+            case 0:
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    dialogueLineNumber = 0;
-                    dialogueFieldNumber = 0;
+                    if (typingText != null)
+                    {
+                        StopCoroutine(typingText);
+                    }
+                    if (currentlyTyping)
+                    {
+                        dialogueText.maxVisibleCharacters = Int32.MaxValue;
+                        currentlyTyping = false;
+                    }
+                    else
+                    {
+                        currentlyTyping = true;
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[dialogueFieldNumber].introDialogue[dialogueLineNumber++], 0f));
+                        if (dialogueLineNumber > characterData[dialogueFieldNumber].introDialogue.Count)
+                        {
+                            dialogueLineNumber = 0;
+                            dialogueFieldNumber = 0;
+                        }
+                    }
                 }
-            }
+                break;
         }
+        
     }
 
-    void SetTextField(TextMeshProUGUI textField, string updatedText)
-    {
-        textField.text = updatedText;
-        dialogueText.maxVisibleCharacters = Int32.MaxValue;
-    }
 
     void SetCharacterData(List<CharacterData> setCharacterData)
     {
         characterData = setCharacterData;
         Debug.Log("Loaded!" + characterData.Count);
+    }
+    void SetTextField(TextMeshProUGUI textField, string updatedText)
+    {
+        textField.text = updatedText;
+        dialogueText.maxVisibleCharacters = Int32.MaxValue;
     }
 
     IEnumerator UpdateTextField(TextMeshProUGUI textField, string updatedText, float letterDelay)
