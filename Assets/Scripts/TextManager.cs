@@ -43,19 +43,21 @@ public class TextManager : MonoBehaviour
 
         while((loadedLine = reader.ReadLine()) != null)
         {
-            if (loadedLine == "#")
+            if (loadedLine.Length > 0 && loadedLine[0] == '#')
             {
                 inputField++;
                 if (inputField > 8)
                 {
                     loadedCharacter.introDialogue = intro;
                     loadedCharacter.characterName = charName;
+                    // load regular sprite
                     loadedCharacter.entryDialogue = entry;
                     loadedCharacter.questionOne = q1;
                     loadedCharacter.questionTwo = q2;
                     loadedCharacter.responseOneDialogue = r1;
                     loadedCharacter.responseTwoDialogue = r2;
                     loadedCharacter.characterFilesInfo = filesInfo;
+                    // load mugshot sprite
                     loadedCharacter.isGuilty = guilty;
 
                     charactersLoaded.Add(loadedCharacter);

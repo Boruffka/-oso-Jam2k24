@@ -19,5 +19,7 @@ public class CharacterData
 
     public string characterFilesInfo;          // box of info +/- 14 lines
 
+    public Sprite characterFilesSprite;        // character second sprite
+
     public bool isGuilty;                      // correct verdict (0/1)
 }

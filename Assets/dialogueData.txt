@@ -1,45 +1,46 @@
-Qintro;
-Qintro2;
+Pierwsza czêœæ wypowiedzi sêdziego przy starcie.
+Druga czêœæ wypowiedzi sêdziego przy starcie.
 #
-Qname;
+Imiê postaci
 #
-Qentry1;
-Qentry2;
+Pierwsza czêœæ wypowiedzi postaci po wprowadzeniu na salê.
+Druga czêœæ wypowiedzi postaci po wprowadzeniu na salê.
+Trzecia czêœæ wypowiedzi postaci po wprowadzeniu na salê.
 #
-Qq1;
+Pytanie pierwsze dla postaci
 #
-Qq2;
+Pytanie drugie dla postaci
 #
-Qr1 1;
-Qr1 2;
+Pierwsza czêœæ odpowiedzi na pytanie pierwsze.
+Druga czêœæ odpowiedzi na pytanie pierwsze.
 #
-Qr2 1;
-Qr2 2;
+Pierwsza czêœæ odpowiedzi na pytanie drugie.
+Druga czêœæ odpowiedzi na pytanie drugie.
 #
-QfilesInfo;
+W jednej linii, wszystkie informacje ci¹g³ym tekstem dotycz¹ce akt prawnych postaci, wszystko trafia tutaj.
 #
-1;
+0
 #
-Fintro;
-Fintro2;
+Pierwsza czêœæ wypowiedzi sêdziego przy drugiej postaci.
+Druga czêœæ wypowiedzi sêdziego przy drugiej postaci.
 #
-Fname;
+Imiê drugiej postaci
 #
-Fentry1;
-Fentry2;
+Pierwsza czêœæ wypowiedzi drugiej postaci po wprowadzeniu na salê.
+Druga czêœæ wypowiedzi drugiej postaci po wprowadzeniu na salê.
+Trzecia czêœæ wypowiedzi drugiej postaci po wprowadzeniu na salê.
 #
-Fq1;
+Pytanie pierwsze dla drugiej postaci 
 #
-Fq2;
+Pytanie drugie dla drugiej postaci 
 #
-Fr1 1;
-Fr1 2;
+Pierwsza czêœæ odpowiedzi drugiej postaci na pytanie pierwsze.
+Druga czêœæ odpowiedzi drugiej postaci na pytanie pierwsze.
 #
-Fr2 1;
-Fr2 2;
+Pierwsza czêœæ odpowiedzi drugiej postaci na pytanie drugie.
+Druga czêœæ odpowiedzi drugiej postaci na pytanie drugie.
 #
-FfilesInfo;
+W jednej linii, wszystkie informacje ci¹g³ym tekstem dotycz¹ce akt prawnych drugiej postaci, wszystko trafia tutaj.
 #
-1;
+1
 #
-
