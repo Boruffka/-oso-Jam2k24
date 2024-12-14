@@ -65,7 +65,7 @@ public class TextManager : MonoBehaviour
                     loadedCharacter.questionOne = q1;
                     loadedCharacter.fullQuestionOne = q1f;
                     loadedCharacter.questionTwo = q2;
-                    loadedCharacter.fullQuestionOne = q2f;
+                    loadedCharacter.fullQuestionTwo = q2f;
                     loadedCharacter.characterFilesInfo = filesInfo;
                     loadedCharacter.isGuilty = guilty;
                     // load mugshot sprite
