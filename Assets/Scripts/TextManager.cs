@@ -55,7 +55,7 @@ public class TextManager : MonoBehaviour
             if (loadedLine.Length > 0 && loadedLine[0] == '#')
             {
                 inputField++;
-                if (inputField > 8)
+                if (inputField > 10)
                 {
                     loadedCharacter.introDialogue = intro;
                     loadedCharacter.entryDialogue = entry;
@@ -68,8 +68,8 @@ public class TextManager : MonoBehaviour
                     loadedCharacter.fullQuestionTwo = q2f;
                     loadedCharacter.characterFilesInfo = filesInfo;
                     loadedCharacter.isGuilty = guilty;
-                    // load mugshot sprite
                     // load regular sprite
+                    // load mugshot sprite
 
                     charactersLoaded.Add(loadedCharacter);
 

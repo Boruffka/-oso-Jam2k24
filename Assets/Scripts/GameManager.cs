@@ -46,9 +46,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        SetTextField(characterFilesText, characterData[0].characterFilesInfo);
-
         chosenCharacter = 0; // RANDOMIZE IT LATER (0;charCount)
+
+        Debug.Log("0:" + characterData[0].characterName + '\n'
+                       + characterData[0].questionOne   + '\n'
+                       + characterData[0].fullQuestionOne + '\n'
+                       + characterData[0].questionTwo + '\n'
+                       + characterData[0].fullQuestionOne + '\n'
+                       + characterData[0].characterFilesInfo + '\n'
+                       + characterData[0].isGuilty + '\n'
+                       );
     }
 
     void Update()
@@ -202,7 +209,6 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         currentlyTyping = true;
-                        SetTextField(characterFilesText, characterData[chosenCharacter].characterFilesInfo);
                         typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[chosenCharacter].responseOneDialogue[dialogueLineNumber++], textRevealSpeed));
                     }
                 }
@@ -227,7 +233,6 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         currentlyTyping = true;
-                        SetTextField(characterFilesText, characterData[chosenCharacter].characterFilesInfo);
                         typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[chosenCharacter].responseTwoDialogue[dialogueLineNumber++], textRevealSpeed));
                     }
                 }
@@ -239,6 +244,8 @@ public class GameManager : MonoBehaviour
                 break;
             case 8:
                 Debug.Log("Reached verdict stage!");
+                dialogueStageNumber = 0;
+                chosenCharacter++;
                 break;
             default:
 
