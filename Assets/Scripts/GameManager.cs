@@ -46,20 +46,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        chosenCharacter = UnityEngine.Random.Range(0, characterData.Count);
+        Debug.Log(chosenCharacter);
         chosenCharacter = 0; // RANDOMIZE IT LATER (0;charCount)
-
-        Debug.Log("0:" + characterData[0].characterName + '\n'
-                       + characterData[0].questionOne   + '\n'
-                       + characterData[0].fullQuestionOne + '\n'
-                       + characterData[0].questionTwo + '\n'
-                       + characterData[0].fullQuestionOne + '\n'
-                       + characterData[0].characterFilesInfo + '\n'
-                       + characterData[0].isGuilty + '\n'
-                       );
     }
 
     void Update()
     {
+
         switch(dialogueStageNumber)
         {
             case 0:
