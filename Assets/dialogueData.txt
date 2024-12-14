@@ -1,46 +1,46 @@
-Pierwsza czêœæ wypowiedzi sêdziego przy starcie.
-Druga czêœæ wypowiedzi sêdziego przy starcie.
+Pierwsza czÄ™Å›Ä‡ wypowiedzi sÄ™dziego przy starcie.
+Druga czÄ™Å›Ä‡ wypowiedzi sÄ™dziego przy starcie.
 #
-Imiê postaci
+Pierwsza czÄ™Å›Ä‡ wypowiedzi postaci po wprowadzeniu na salÄ™.
+Druga czÄ™Å›Ä‡ wypowiedzi postaci po wprowadzeniu na salÄ™.
+Trzecia czÄ™Å›Ä‡ wypowiedzi postaci po wprowadzeniu na salÄ™.
 #
-Pierwsza czêœæ wypowiedzi postaci po wprowadzeniu na salê.
-Druga czêœæ wypowiedzi postaci po wprowadzeniu na salê.
-Trzecia czêœæ wypowiedzi postaci po wprowadzeniu na salê.
+Pierwsza czÄ™Å›Ä‡ odpowiedzi na pytanie pierwsze.
+Druga czÄ™Å›Ä‡ odpowiedzi na pytanie pierwsze.
+#
+Pierwsza czÄ™Å›Ä‡ odpowiedzi na pytanie drugie.
+Druga czÄ™Å›Ä‡ odpowiedzi na pytanie drugie.
+#
+ImiÄ™ postaci
 #
 Pytanie pierwsze dla postaci
 #
 Pytanie drugie dla postaci
 #
-Pierwsza czêœæ odpowiedzi na pytanie pierwsze.
-Druga czêœæ odpowiedzi na pytanie pierwsze.
-#
-Pierwsza czêœæ odpowiedzi na pytanie drugie.
-Druga czêœæ odpowiedzi na pytanie drugie.
-#
-W jednej linii, wszystkie informacje ci¹g³ym tekstem dotycz¹ce akt prawnych postaci, wszystko trafia tutaj.
+W jednej linii, wszystkie informacje ciÄ…gÅ‚ym tekstem dotyczÄ…ce akt prawnych postaci, wszystko trafia tutaj.
 #
 0
 #
-Pierwsza czêœæ wypowiedzi sêdziego przy drugiej postaci.
-Druga czêœæ wypowiedzi sêdziego przy drugiej postaci.
+Pierwsza czÄ™Å›Ä‡ wypowiedzi sÄ™dziego przy drugiej postaci.
+Druga czÄ™Å›Ä‡ wypowiedzi sÄ™dziego przy drugiej postaci.
 #
-Imiê drugiej postaci
+ImiÄ™ drugiej postaci
 #
-Pierwsza czêœæ wypowiedzi drugiej postaci po wprowadzeniu na salê.
-Druga czêœæ wypowiedzi drugiej postaci po wprowadzeniu na salê.
-Trzecia czêœæ wypowiedzi drugiej postaci po wprowadzeniu na salê.
+Pierwsza czÄ™Å›Ä‡ wypowiedzi drugiej postaci po wprowadzeniu na salÄ™.
+Druga czÄ™Å›Ä‡ wypowiedzi drugiej postaci po wprowadzeniu na salÄ™.
+Trzecia czÄ™Å›Ä‡ wypowiedzi drugiej postaci po wprowadzeniu na salÄ™.
 #
 Pytanie pierwsze dla drugiej postaci 
 #
 Pytanie drugie dla drugiej postaci 
 #
-Pierwsza czêœæ odpowiedzi drugiej postaci na pytanie pierwsze.
-Druga czêœæ odpowiedzi drugiej postaci na pytanie pierwsze.
+Pierwsza czÄ™Å›Ä‡ odpowiedzi drugiej postaci na pytanie pierwsze.
+Druga czÄ™Å›Ä‡ odpowiedzi drugiej postaci na pytanie pierwsze.
 #
-Pierwsza czêœæ odpowiedzi drugiej postaci na pytanie drugie.
-Druga czêœæ odpowiedzi drugiej postaci na pytanie drugie.
+Pierwsza czÄ™Å›Ä‡ odpowiedzi drugiej postaci na pytanie drugie.
+Druga czÄ™Å›Ä‡ odpowiedzi drugiej postaci na pytanie drugie.
 #
-W jednej linii, wszystkie informacje ci¹g³ym tekstem dotycz¹ce akt prawnych drugiej postaci, wszystko trafia tutaj.
+W jednej linii, wszystkie informacje ciÄ…gÅ‚ym tekstem dotyczÄ…ce akt prawnych drugiej postaci, wszystko trafia tutaj.
 #
 1
 #

@@ -5,11 +5,18 @@ using System.Collections.Generic;
 public class TextManager : MonoBehaviour
 {
     [SerializeField] private List<CharacterData> charactersLoaded = new List<CharacterData>();
+    [SerializeField] GameObject gameManager;
+
+    void Awake()
+    {
+        gameManager = GameObject.Find("GameManager");
+    }
 
     void Start()
     {
         // --- name the file "dialogueData.txt" ----
         LoadCharacters();
+        gameManager.SendMessage("SetCharacterData", charactersLoaded);
     }
 
     // s - single, m - multiple lines
@@ -84,22 +91,22 @@ public class TextManager : MonoBehaviour
                         intro.Add(loadedLine);
                         break;
                     case 1:
-                        charName = loadedLine;
-                        break;
-                    case 2:
                         entry.Add(loadedLine);
                         break;
-                    case 3:
-                        q1 = loadedLine;
-                        break;
-                    case 4:
-                        q2 = loadedLine;
-                        break;
-                    case 5:
+                    case 2:
                         r1.Add(loadedLine);
                         break;
-                    case 6:
+                    case 3:
                         r2.Add(loadedLine);
+                        break;
+                    case 4:
+                        charName = loadedLine;
+                        break;
+                    case 5:
+                        q1 = loadedLine;
+                        break;
+                    case 6:
+                        q2 = loadedLine;
                         break;
                     case 7:
                         filesInfo = loadedLine;
