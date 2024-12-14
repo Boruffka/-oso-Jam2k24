@@ -3,35 +3,45 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UIElements;
+
 public class GameManager : MonoBehaviour
 {
     // GameObjects or TMPro references
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private TextMeshProUGUI characterNameText;
     [SerializeField] private TextMeshProUGUI characterFilesText;
 
+    // dialogue data and fields
     private Coroutine typingText;
     [SerializeField] private bool currentlyTyping;
 
     [SerializeField] private List<CharacterData> characterData;
 
+    [SerializeField] private int chosenCharacter = 0;
     [SerializeField] private int dialogueStageNumber= 0;
-    [SerializeField] private int dialogueFieldNumber = 0;
     [SerializeField] private int dialogueLineNumber = 0;
 
-    // GameObjects or TMPro assignments
+    [SerializeField] private GameObject buttonOne;
+    [SerializeField] private GameObject buttonTwo;
+
+    [SerializeField] private bool buttonOnePressed;
+    [SerializeField] private bool buttonTwoPressed;
+
     void Awake()
     {
+        // GameObjects or TMPro assignments
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
-        characterNameText = GameObject.Find("CharacterName  Text").GetComponent<TextMeshProUGUI>();
         characterFilesText = GameObject.Find("CharacterFilesText").GetComponent<TextMeshProUGUI>();
 
+        buttonOne = GameObject.Find("QuestionButtonOne");
+        buttonTwo = GameObject.Find("QuestionButtonTwo");
     }
 
     void Start()
     {
         SetTextField(characterFilesText, characterData[0].characterFilesInfo);
-        SetTextField(characterNameText, characterData[0].characterName);
+
+        chosenCharacter = 0; // RANDOMIZE IT LATER (0;charCount)
     }
 
     void Update()
@@ -39,6 +49,8 @@ public class GameManager : MonoBehaviour
         switch(dialogueStageNumber)
         {
             case 0:
+                buttonOne.SetActive(false);
+                buttonTwo.SetActive(false);
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     if (typingText != null)
@@ -53,19 +65,129 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         currentlyTyping = true;
-                        typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[dialogueFieldNumber].introDialogue[dialogueLineNumber++], 0f));
-                        if (dialogueLineNumber > characterData[dialogueFieldNumber].introDialogue.Count)
-                        {
-                            dialogueLineNumber = 0;
-                            dialogueFieldNumber = 0;
-                        }
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[chosenCharacter].introDialogue[dialogueLineNumber++], 0.02f));
                     }
                 }
+                if ((dialogueLineNumber > characterData[chosenCharacter].introDialogue.Count - 1) && currentlyTyping == false)
+                {
+                    dialogueLineNumber = 0;
+                    dialogueStageNumber = 1;
+                }
+                break;
+            case 1:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (typingText != null)
+                    {
+                        StopCoroutine(typingText);
+                    }
+                    if (currentlyTyping)
+                    {
+                        dialogueText.maxVisibleCharacters = Int32.MaxValue;
+                        currentlyTyping = false;
+                    }
+                    else
+                    {
+                        currentlyTyping = true;
+                        SetTextField(characterFilesText, characterData[chosenCharacter].characterFilesInfo);
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[chosenCharacter].entryDialogue[dialogueLineNumber++], 0.02f));
+                    }
+                }
+                if ((dialogueLineNumber > characterData[chosenCharacter].entryDialogue.Count - 1) && currentlyTyping == false)
+                {
+                    dialogueLineNumber = 0;
+                    dialogueStageNumber = 2;
+                }
+                break;
+            case 2:
+                dialogueText.gameObject.SetActive(false);
+                if (buttonOnePressed)
+                    dialogueStageNumber = 3;
+                if (buttonTwoPressed)
+                    dialogueStageNumber = 4;
+                break;
+            case 3:
+                dialogueText.gameObject.SetActive(true);
+                buttonOne.SetActive(false);
+                buttonTwo.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (typingText != null)
+                    {
+                        StopCoroutine(typingText);
+                    }
+                    if (currentlyTyping)
+                    {
+                        dialogueText.maxVisibleCharacters = Int32.MaxValue;
+                        currentlyTyping = false;
+                    }
+                    else
+                    {
+                        currentlyTyping = true;
+                        SetTextField(characterFilesText, characterData[chosenCharacter].characterFilesInfo);
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[chosenCharacter].responseOneDialogue[dialogueLineNumber++], 0.02f));
+                    }
+                }
+                if ((dialogueLineNumber > characterData[chosenCharacter].responseOneDialogue.Count - 1) && currentlyTyping == false)
+                {
+                    dialogueLineNumber = 0;
+                    dialogueStageNumber = 5;
+                }
+                break;
+            case 4:
+                dialogueText.gameObject.SetActive(true);
+                buttonOne.SetActive(false);
+                buttonTwo.SetActive(false);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (typingText != null)
+                    {
+                        StopCoroutine(typingText);
+                    }
+                    if (currentlyTyping)
+                    {
+                        dialogueText.maxVisibleCharacters = Int32.MaxValue;
+                        currentlyTyping = false;
+                    }
+                    else
+                    {
+                        currentlyTyping = true;
+                        SetTextField(characterFilesText, characterData[chosenCharacter].characterFilesInfo);
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, characterData[chosenCharacter].responseTwoDialogue[dialogueLineNumber++], 0.02f));
+                    }
+                }
+                if ((dialogueLineNumber > characterData[chosenCharacter].responseTwoDialogue.Count - 1) && currentlyTyping == false)
+                {
+                    dialogueLineNumber = 0;
+                    dialogueStageNumber = 5;
+                }
+                break;
+            case 5:
+                Debug.Log("fin");
+                dialogueStageNumber++;
+                break;
+            default:
+                Debug.Log("ERROR!");
                 break;
         }
-        
+        CleanUp();
     }
 
+    void CleanUp()
+    {
+        buttonOnePressed = false;
+        buttonTwoPressed = false;
+    }
+
+    public void ButtonOnePressed()
+    {
+        buttonOnePressed = true;
+    }
+
+    public void ButtonTwoPressed()
+    {
+        buttonTwoPressed = true;
+    }
 
     void SetCharacterData(List<CharacterData> setCharacterData)
     {

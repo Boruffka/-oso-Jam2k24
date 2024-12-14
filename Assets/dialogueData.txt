@@ -15,7 +15,11 @@ Imię postaci
 #
 Pytanie pierwsze dla postaci
 #
+Pełne pytanie pierwsze dla postaci.
+#
 Pytanie drugie dla postaci
+#
+Pełne pytanie drugie dla postaci.
 #
 W jednej linii, wszystkie informacje ciągłym tekstem dotyczące akt prawnych postaci, wszystko trafia tutaj.
 #
@@ -38,7 +42,11 @@ Imię drugiej postaci
 #
 Pytanie pierwsze dla drugiej postaci
 #
+Pełne pytanie pierwsze dla drugiej postaci.
+#
 Pytanie drugie dla drugiej postaci
+#
+Pełne pytanie drugie dla drugiej postaci.
 #
 W jednej linii, wszystkie informacje ciągłym tekstem dotyczące akt prawnych drugiej postaci, wszystko trafia tutaj.
 #

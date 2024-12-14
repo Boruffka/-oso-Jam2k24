@@ -39,12 +39,14 @@ public class TextManager : MonoBehaviour
 
         CharacterData loadedCharacter = new CharacterData();
         List<string> intro = new List<string>();
-        string charName = null;
         List<string> entry = new List<string>();
-        string q1 = null;
-        string q2 = null;
         List<string> r1 = new List<string>();
         List<string> r2 = new List<string>();
+        string charName = null;
+        string q1 = null;
+        string q1f = null;
+        string q2 = null;
+        string q2f = null;
         string filesInfo = null;
         bool guilty = false;
 
@@ -56,27 +58,31 @@ public class TextManager : MonoBehaviour
                 if (inputField > 8)
                 {
                     loadedCharacter.introDialogue = intro;
-                    loadedCharacter.characterName = charName;
-                    // load regular sprite
                     loadedCharacter.entryDialogue = entry;
-                    loadedCharacter.questionOne = q1;
-                    loadedCharacter.questionTwo = q2;
                     loadedCharacter.responseOneDialogue = r1;
                     loadedCharacter.responseTwoDialogue = r2;
+                    loadedCharacter.characterName = charName;
+                    loadedCharacter.questionOne = q1;
+                    loadedCharacter.fullQuestionOne = q1f;
+                    loadedCharacter.questionTwo = q2;
+                    loadedCharacter.fullQuestionOne = q2f;
                     loadedCharacter.characterFilesInfo = filesInfo;
-                    // load mugshot sprite
                     loadedCharacter.isGuilty = guilty;
+                    // load mugshot sprite
+                    // load regular sprite
 
                     charactersLoaded.Add(loadedCharacter);
 
                     loadedCharacter = new CharacterData();
                     intro = new List<string>();
-                    charName = null;
                     entry = new List<string>();
-                    q1 = null;
-                    q2 = null;
                     r1 = new List<string>();
                     r2 = new List<string>();
+                    charName = null;
+                    q1 = null;
+                    q1f = null;
+                    q2 = null;
+                    q2f = null;
                     filesInfo = null;
                     guilty = false;
 
@@ -106,12 +112,18 @@ public class TextManager : MonoBehaviour
                         q1 = loadedLine;
                         break;
                     case 6:
-                        q2 = loadedLine;
+                        q1f = loadedLine;
                         break;
                     case 7:
-                        filesInfo = loadedLine;
+                        q2 = loadedLine;
                         break;
                     case 8:
+                        q2f = loadedLine;
+                        break;
+                    case 9:
+                        filesInfo = loadedLine;
+                        break;
+                    case 10:
                         if(loadedLine == "1")
                         {
                             guilty = true;
