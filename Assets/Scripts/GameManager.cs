@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,23 +8,25 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    // music
+    [SerializeField] private AudioSource musicPlayer;
+    [SerializeField] private AudioSource paperSoundsPlayer;
+    [SerializeField] private AudioSource otherSoundsPlayer;
+    
     // data
     [SerializeField] private int scoreCounter;
     [SerializeField] private List<CharacterData> characterData;
-    [SerializeField] private List<String> preludeDialogue;
-    [SerializeField] private List<Sprite> spriteOneData;
-    [SerializeField] private List<Sprite> spriteTwoData;
-    [SerializeField] private List<Sprite> spriteThreeData;
+    [SerializeField] private List<string> preludeDialogue;
+    [SerializeField] private List<Texture> spriteOneData;
+    [SerializeField] private List<Texture> spriteTwoData;
+    [SerializeField] private List<Texture> spriteThreeData;
+    [SerializeField] private List<Texture> mugshotData;
     [SerializeField] private List<AudioClip> soundData;
     [SerializeField] private bool firstCase;
 
     // dialogue
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI pageZeroText;
-    [SerializeField] private TextMeshProUGUI pageOneTextOne; // summary
-    [SerializeField] private TextMeshProUGUI pageOneTextTwo; // traits
-    [SerializeField] private TextMeshProUGUI pageTwoTextOne; // indictment
-    [SerializeField] private TextMeshProUGUI pageTwoTextTwo; // proof
     [SerializeField] private GameObject dialogueAnchor;
 
     // dialogue data and fields
@@ -47,9 +50,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pageZeroAnchor;
     [SerializeField] private GameObject pageOneAnchor;
     [SerializeField] private GameObject pageTwoAnchor;
+    [SerializeField] private TextMeshProUGUI pageOneTextOne; // summary
+    [SerializeField] private TextMeshProUGUI pageOneTextTwo; // traits
+    [SerializeField] private TextMeshProUGUI pageTwoTextOne; // indictment
+    [SerializeField] private TextMeshProUGUI pageTwoTextTwo; // proof
+    [SerializeField] private RawImage pageOnePhotoSprite;
 
     // character
     [SerializeField] private GameObject character;
+    [SerializeField] private RawImage characterSprite;
 
     // clock
     [SerializeField] private GameObject clockHand;
@@ -79,6 +88,7 @@ public class GameManager : MonoBehaviour
         pageOneTextTwo = GameObject.Find("PageOneTextTwo").GetComponent<TextMeshProUGUI>();
         pageTwoTextOne = GameObject.Find("PageTwoTextOne").GetComponent<TextMeshProUGUI>();
         pageTwoTextTwo = GameObject.Find("PageTwoTextTwo").GetComponent<TextMeshProUGUI>();
+        pageOnePhotoSprite = GameObject.Find("PageOnePhoto").GetComponent<RawImage>();
         dialogueAnchor = GameObject.Find("DialogueBox");
         textRevealSpeed = .01f;
         typedOnce = false;
@@ -96,27 +106,30 @@ public class GameManager : MonoBehaviour
 
         //character
         character = GameObject.Find("CharacterSprite");
+        characterSprite = GameObject.Find("CharacterSprite").GetComponent<RawImage>();
 
         // clock
         clockHand = GameObject.Find("ClockHand");
 
         //timers
         mainTimer = 0f;
-        mainTimerLimit = 120f;
+        mainTimerLimit = 180f;
         movementTimer = 0;
-                
+
     }
 
     void Start()
     {
         //chosenCharacter = UnityEngine.Random.Range(0, characterData.Count);
-        Debug.Log(chosenCharacter);
         chosenCharacter = 0; // RANDOMIZE IT LATER (0;charCount)
         SetTextField(pageZeroText, characterData[chosenCharacter].characterName);
         SetTextField(pageOneTextOne, characterData[chosenCharacter].characterFilesSummary);
         SetTextField(pageOneTextTwo, characterData[chosenCharacter].characterFilesTraits);
         SetTextField(pageTwoTextOne, characterData[chosenCharacter].characterFilesIndictment);
         SetTextField(pageTwoTextTwo, characterData[chosenCharacter].characterFilesProof);
+        pageOnePhotoSprite.texture = mugshotData[chosenCharacter];
+        characterSprite.texture = spriteOneData[chosenCharacter];
+        otherSoundsPlayer.clip = soundData[chosenCharacter];
     }
 
     void Update()
@@ -165,12 +178,13 @@ public class GameManager : MonoBehaviour
                     StartCoroutine(MoveTo(pageOneAnchor.transform, new Vector3(0, 0, 0), .5f));
                     StartCoroutine(MoveTo(pageTwoAnchor.transform, new Vector3(0, 0, 0), .5f));
                     MoveCharacterAwayFromScreen();
-                    // load sprite
+                    characterSprite.texture = spriteOneData[chosenCharacter];
                     SetTextField(pageZeroText, characterData[chosenCharacter].characterName);
                     SetTextField(pageOneTextOne, characterData[chosenCharacter].characterFilesSummary);
                     SetTextField(pageOneTextTwo, characterData[chosenCharacter].characterFilesTraits);
                     SetTextField(pageTwoTextOne, characterData[chosenCharacter].characterFilesIndictment);
                     SetTextField(pageTwoTextTwo, characterData[chosenCharacter].characterFilesProof);
+
                 }
                 if((movementTimerStarted && movementTimer > .75f) || !movementTimerStarted)
                 {
@@ -209,6 +223,7 @@ public class GameManager : MonoBehaviour
                     dialogueStageNumber = 3;
                     mainTimer = 0;
                     mainTimerStarted = true;
+                    musicPlayer.Play();
                 }
                 break;
             case 3:
@@ -278,6 +293,8 @@ public class GameManager : MonoBehaviour
                 questionButtonTwo.SetActive(false);
                 if (Input.GetKeyDown(KeyCode.Space) || !typedOnce)
                 {
+                    characterSprite.texture = spriteTwoData[chosenCharacter];
+
                     typedOnce = true;
                     if (typingText != null)
                     {
@@ -311,6 +328,8 @@ public class GameManager : MonoBehaviour
                 questionButtonTwo.SetActive(false);
                 if (Input.GetKeyDown(KeyCode.Space) || !typedOnce)
                 {
+                    characterSprite.texture = spriteThreeData[chosenCharacter];
+
                     typedOnce = true;
                     if (typingText != null)
                     {
@@ -562,20 +581,24 @@ public class GameManager : MonoBehaviour
     public void movePageZeroOnScreen()
     {
         StartCoroutine(MoveTo(pageZeroAnchor.transform, new Vector3(630, 0, 0), .5f));
+        paperSoundsPlayer.Play();
     }
 
     public void movePageZeroAwayFromScreen()
     {
         StartCoroutine(MoveTo(pageZeroAnchor.transform, new Vector3(0, 0, 0), .5f));
+        paperSoundsPlayer.Play();
     }
     public void movePageOneOnScreen()
     {
         StartCoroutine(MoveTo(pageOneAnchor.transform, new Vector3(630, 0, 0), .5f));
+        paperSoundsPlayer.Play();
     }
 
     public void movePageOneAwayFromScreen()
     {
         StartCoroutine(MoveTo(pageOneAnchor.transform, new Vector3(0, 0, 0), .5f));
+        paperSoundsPlayer.Play();
     }
 
     public void MoveCharacterOnScreen()
