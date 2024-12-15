@@ -1,4 +1,4 @@
-Pierwsza część wypowiedzi sędziego przy starcie.
+Pierwsza <b>część wypowiedzi</b> sędziego przy starcie.
 Druga część wypowiedzi sędziego przy starcie.
 #
 Pierwsza część wypowiedzi postaci po wprowadzeniu na salę.
