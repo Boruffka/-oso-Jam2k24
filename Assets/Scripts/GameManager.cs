@@ -5,13 +5,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // blackout
+
     // music
     [SerializeField] private AudioSource musicPlayer;
     [SerializeField] private AudioSource paperSoundsPlayer;
     [SerializeField] private AudioSource otherSoundsPlayer;
+    [SerializeField] private AudioSource idleMusicPlayer;
     
     // data
     [SerializeField] private int scoreCounter;
@@ -63,6 +67,10 @@ public class GameManager : MonoBehaviour
     // clock
     [SerializeField] private GameObject clockHand;
 
+    // stamps
+    [SerializeField] private GameObject guiltyStamp;
+    [SerializeField] private GameObject innocentStamp;
+
     //timers
     [SerializeField] private float mainTimer;
     [SerializeField] private bool mainTimerStarted;
@@ -111,6 +119,10 @@ public class GameManager : MonoBehaviour
         // clock
         clockHand = GameObject.Find("ClockHand");
 
+        // stamps
+        guiltyStamp = GameObject.Find("GuiltyStamp");
+        innocentStamp = GameObject.Find("InnocentStamp");
+
         //timers
         mainTimer = 0f;
         mainTimerLimit = 180f;
@@ -146,6 +158,8 @@ public class GameManager : MonoBehaviour
             case 0:
                 questionButtonOne.SetActive(false);
                 questionButtonTwo.SetActive(false);
+                guiltyStamp.SetActive(false);
+                innocentStamp.SetActive(false);
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     if (typingText != null)
@@ -184,6 +198,7 @@ public class GameManager : MonoBehaviour
                     SetTextField(pageOneTextTwo, characterData[chosenCharacter].characterFilesTraits);
                     SetTextField(pageTwoTextOne, characterData[chosenCharacter].characterFilesIndictment);
                     SetTextField(pageTwoTextTwo, characterData[chosenCharacter].characterFilesProof);
+                    otherSoundsPlayer.clip = soundData[chosenCharacter];
 
                 }
                 if((movementTimerStarted && movementTimer > .75f) || !movementTimerStarted)
@@ -199,7 +214,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case 2:
-                if (Input.GetKeyDown(KeyCode.Space) || !typedOnce)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     typedOnce = true;
                     if (typingText != null)
@@ -223,6 +238,7 @@ public class GameManager : MonoBehaviour
                     dialogueStageNumber = 3;
                     mainTimer = 0;
                     mainTimerStarted = true;
+                    StopIdleMusic();
                     musicPlayer.Play();
                 }
                 break;
@@ -415,6 +431,8 @@ public class GameManager : MonoBehaviour
             case 9:
                 if ((Input.GetKeyDown(KeyCode.Space) || (mainTimerStarted && mainTimer > mainTimerLimit)) && !typedOnce)
                 {
+                    musicPlayer.Stop();
+                    StartIdleMusic();
                     typedOnce = true;
                     dialogueText.gameObject.SetActive(false);
                     questionButtonOne.SetActive(true);
@@ -425,11 +443,19 @@ public class GameManager : MonoBehaviour
                 if (buttonOnePressed)
                 {
                     dialogueStageNumber = 10;
+                    if(characterData[chosenCharacter].isGuilty == true)
+                    {
+                        scoreCounter++;
+                    }
                     typedOnce = false;
                 }
                 if (buttonTwoPressed)
                 {
                     dialogueStageNumber = 11;
+                    if (characterData[chosenCharacter].isGuilty == false)
+                    {
+                        scoreCounter++;
+                    }
                     typedOnce = false;
                 }
                 break;
@@ -453,6 +479,7 @@ public class GameManager : MonoBehaviour
                     {
                         currentlyTyping = true;
                         typingText = StartCoroutine(UpdateTextField(dialogueText, "S¹d po zapoznaniu siê z obron¹ oskar¿onego," + characterData[chosenCharacter].characterName + " , dochodzi do wniosku, i¿ oskar¿ony ponosi odpowiedzialnoœæ za zaistnia³y incydent.", textRevealSpeed));
+                        guiltyStamp.SetActive(true);
                     }
                 }
                 if (typedOnce && currentlyTyping == false)
@@ -482,6 +509,7 @@ public class GameManager : MonoBehaviour
                     {
                         currentlyTyping = true;
                         typingText = StartCoroutine(UpdateTextField(dialogueText, "S¹d po zapoznaniu siê z obron¹ oskar¿onego," + characterData[chosenCharacter].characterName + " , dochodzi do wniosku, i¿ oskar¿ony nie ponosi odpowiedzialnoœci za zaistnia³y incydent.", textRevealSpeed));
+                        innocentStamp.SetActive(true);
                     }
                 }
                 if (typedOnce && currentlyTyping == false)
@@ -551,9 +579,17 @@ public class GameManager : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
                     chosenCharacter++;
+                    if(chosenCharacter>2)
+                    {
+                        dialogueStageNumber = 200;
+                    }
                     dialogueStageNumber = 1;
                     typedOnce = false;
                 }
+                break;
+            case 200:
+                PlayerPrefs.SetInt("score", scoreCounter);
+                dialogueStageNumber = 1;
                 break;
             default:
 
@@ -609,6 +645,16 @@ public class GameManager : MonoBehaviour
     public void MoveCharacterAwayFromScreen()
     {
         StartCoroutine(MoveTo(character.transform, new Vector3(0, -1000, 0), .5f));
+    }
+
+    public void StopIdleMusic()
+    {
+        idleMusicPlayer.volume = 0;
+    }
+
+    public void StartIdleMusic()
+    {
+        idleMusicPlayer.volume = .2f;
     }
 
     public void Test()
