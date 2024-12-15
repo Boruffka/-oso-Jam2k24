@@ -19,17 +19,6 @@ public class TextManager : MonoBehaviour
         gameManager.SendMessage("SetCharacterData", charactersLoaded);
     }
 
-    // s - single, m - multiple lines
-    // [0] intro (m)
-    // [1] charName (s)
-    // [2] entry (m)
-    // [3] q1 (s)
-    // [4] q2 (s)
-    // [5] r1 (m)
-    // [6] r2 (m)
-    // [7] filesInfo (s)
-    // [8] guilty (s) 0 or 1
-
     void LoadCharacters()
     {
         string path = "Assets/dialogueData.txt";
@@ -47,95 +36,116 @@ public class TextManager : MonoBehaviour
         string q1f = null;
         string q2 = null;
         string q2f = null;
-        string filesInfo = null;
+        string cfs = null;
+        string cft = null;
+        string cfi = null;
+        string cfp = null;
         bool guilty = false;
 
         while((loadedLine = reader.ReadLine()) != null)
         {
-            if (loadedLine.Length > 0 && loadedLine[0] == '#')
+            if (loadedLine[0] != '/')
             {
-                inputField++;
-                if (inputField > 10)
+                if (loadedLine.Length > 0 && loadedLine[0] == '#')
                 {
-                    loadedCharacter.introDialogue = intro;
-                    loadedCharacter.entryDialogue = entry;
-                    loadedCharacter.responseOneDialogue = r1;
-                    loadedCharacter.responseTwoDialogue = r2;
-                    loadedCharacter.characterName = charName;
-                    loadedCharacter.questionOne = q1;
-                    loadedCharacter.fullQuestionOne = q1f;
-                    loadedCharacter.questionTwo = q2;
-                    loadedCharacter.fullQuestionTwo = q2f;
-                    loadedCharacter.characterFilesInfo = filesInfo;
-                    loadedCharacter.isGuilty = guilty;
-                    // load regular sprite
-                    // load mugshot sprite
+                    inputField++;
+                    if (inputField > 13)
+                    {
+                        loadedCharacter.introDialogue = intro;
+                        loadedCharacter.entryDialogue = entry;
+                        loadedCharacter.responseOneDialogue = r1;
+                        loadedCharacter.responseTwoDialogue = r2;
+                        loadedCharacter.characterName = charName;
+                        loadedCharacter.questionOne = q1;
+                        loadedCharacter.fullQuestionOne = q1f;
+                        loadedCharacter.questionTwo = q2;
+                        loadedCharacter.fullQuestionTwo = q2f;
+                        loadedCharacter.characterFilesSummary = cfs;
+                        loadedCharacter.characterFilesTraits = cft;
+                        loadedCharacter.characterFilesIndictment = cfi;
+                        loadedCharacter.characterFilesProof = cfp;
+                        loadedCharacter.isGuilty = guilty;
+                        // load regular sprite
+                        // load mugshot sprite
 
-                    charactersLoaded.Add(loadedCharacter);
+                        charactersLoaded.Add(loadedCharacter);
 
-                    loadedCharacter = new CharacterData();
-                    intro = new List<string>();
-                    entry = new List<string>();
-                    r1 = new List<string>();
-                    r2 = new List<string>();
-                    charName = null;
-                    q1 = null;
-                    q1f = null;
-                    q2 = null;
-                    q2f = null;
-                    filesInfo = null;
-                    guilty = false;
+                        loadedCharacter = new CharacterData();
+                        intro = new List<string>();
+                        entry = new List<string>();
+                        r1 = new List<string>();
+                        r2 = new List<string>();
+                        charName = null;
+                        q1 = null;
+                        q1f = null;
+                        q2 = null;
+                        q2f = null;
+                        cfs = null;
+                        cft = null;
+                        cfi = null;
+                        cfp = null;
+                        guilty = false;
 
-                    inputField = 0;
+                        inputField = 0;
+                    }
                 }
-            }
-            else
-            {
-                switch(inputField)
+                else
                 {
-                    case 0:
-                        intro.Add(loadedLine);
-                        break;
-                    case 1:
-                        entry.Add(loadedLine);
-                        break;
-                    case 2:
-                        r1.Add(loadedLine);
-                        break;
-                    case 3:
-                        r2.Add(loadedLine);
-                        break;
-                    case 4:
-                        charName = loadedLine;
-                        break;
-                    case 5:
-                        q1 = loadedLine;
-                        break;
-                    case 6:
-                        q1f = loadedLine;
-                        break;
-                    case 7:
-                        q2 = loadedLine;
-                        break;
-                    case 8:
-                        q2f = loadedLine;
-                        break;
-                    case 9:
-                        filesInfo = loadedLine;
-                        break;
-                    case 10:
-                        if(loadedLine == "1")
-                        {
-                            guilty = true;
-                        }
-                        else
-                        {
-                            guilty = false;
-                        }
-                        break;
-                    default:
-                        Debug.Log("Something went horribly wrong during .txt input operations.");
-                        break;
+                    switch (inputField)
+                    {
+                        case 0:
+                            intro.Add(loadedLine);
+                            break;
+                        case 1:
+                            entry.Add(loadedLine);
+                            break;
+                        case 2:
+                            r1.Add(loadedLine);
+                            break;
+                        case 3:
+                            r2.Add(loadedLine);
+                            break;
+                        case 4:
+                            charName = loadedLine;
+                            break;
+                        case 5:
+                            q1 = loadedLine;
+                            break;
+                        case 6:
+                            q1f = loadedLine;
+                            break;
+                        case 7:
+                            q2 = loadedLine;
+                            break;
+                        case 8:
+                            q2f = loadedLine;
+                            break;
+                        case 9:
+                            cfs = loadedLine;
+                            break;
+                        case 10:
+                            cft = loadedLine;
+                            break;
+                        case 11:
+                            cfi = loadedLine;
+                            break;
+                        case 12:
+                            cfp = loadedLine;
+                            break;
+                        case 13:
+                            if (loadedLine == "1")
+                            {
+                                guilty = true;
+                            }
+                            else
+                            {
+                                guilty = false;
+                            }
+                            break;
+                        default:
+                            Debug.Log("Something went horribly wrong during .txt input operations.");
+                            break;
+                    }
                 }
             }
         }

@@ -13,8 +13,11 @@ public class CharacterData
     public string fullQuestionOne;             // [6] full question one
     public string questionTwo;                 // [7] brief of question two
     public string fullQuestionTwo;             // [8] full question two
-    public string characterFilesInfo;          // [9] box of info +/- 14 lines
-    public bool isGuilty;                      // [10] correct verdict (0/1)
+    public string characterFilesSummary;       // [9] box of info 
+    public string characterFilesTraits;        // [10] box of info 
+    public string characterFilesIndictment;    // [11] box of info 
+    public string characterFilesProof;         // [12] box of info 
+    public bool isGuilty;                      // [13] correct verdict (0/1)
 
     public Sprite characterSprite;             // character sprite
     public Sprite characterFilesSprite;        // character second sprite

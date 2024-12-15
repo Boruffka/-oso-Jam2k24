@@ -1,54 +1,176 @@
-Pierwsza <b>część wypowiedzi</b> sędziego przy starcie.
+Pierwsza część wypowiedzi sędziego przy starcie.
 Druga część wypowiedzi sędziego przy starcie.
+Trzecia część wypowiedzi sędziego przy starcie.
 #
-Pierwsza część wypowiedzi postaci po wprowadzeniu na salę.
-Druga część wypowiedzi postaci po wprowadzeniu na salę.
-Trzecia część wypowiedzi postaci po wprowadzeniu na salę.
+Panie Sądzino! To jest z pradziada na dziada w tej rodzinie!
+Mi Madre to mi to w gardło wciskała jak chory byłem. Zimno było i mokro.
+Ale nikomu bym go nie sprzedał!...Nigdy!
 #
-Pierwsza część odpowiedzi na pytanie pierwsze.
-Druga część odpowiedzi na pytanie pierwsze.
+To, no... pewny nie jestem, ale to mój pra pra pra dziad dostał to przy jego produkcji i tak... jakoś zostało...
+...a że się przydaje przy okazji...to taka, no, tradycja, nie?
 #
-Pierwsza część odpowiedzi na pytanie drugie.
-Druga część odpowiedzi na pytanie drugie.
+Panie! Wie pan jak jest. My misie raczej szybko mokniemy, czasem nawet jak nie pada. Druga część odpowiedzi na pytanie drugie.
+Ta substancja jest jedyną która trzyma nas w ryzach podczas wilgoci!
 #
-Imię postaci
+Andrzej  Misiarz
 #
-Pytanie pierwsze
+Pozwolenie?
 #
-Pełne pytanie pierwsze dla postaci.
+Czy ma pan pozwolenie na trzymanie takich substancji?
 #
-Pytanie drugie
+Choroby?
 #
-Pełne pytanie drugie dla postaci.
+Czy mógłby pan rozwinąć, do czego konkretnie nadawała się substancja podczas choroby?
 #
-W jednej linii, wszystkie informacje ciągłym tekstem dotyczące akt prawnych postaci, wszystko trafia tutaj.
+Oskarżony, zabawka ,,Pluszowy Miś". Oskarżony nie przyznaje się do popełnienia zbrodni.
+#
+Dobrze zbudowany\n Jasno brązowe oczy\n Latynos
+#
+Prokuratura oskarża Andrzeja Misiarza, o popełnienie przestępca dystrybucji narkotykowej substancji, w postaci prawdopodobnie woreczków pochłaniaczy wilgoci. Oskarżony został przyłapany w sposób jawny w sklepie spożywczym. Oskarżony nie stawiał oporu policji, nie przyznawał się jednak do popełnionej zbrodni.
+#
+Kamery sklepu zarejestrowały oskarżonego, jednak nie widać dystrybucji\n Jedyny świadek zdarzenia i oskarżyciel nie odezwał się na żadne wezwanie do sądu\n
 #
 0
 #
 Pierwsza część wypowiedzi sędziego przy starcie.
 Druga część wypowiedzi sędziego przy starcie.
+Trzecia część wypowiedzi sędziego przy starcie.
 #
-Pierwsza część wypowiedzi drugiej postaci po wprowadzeniu na salę.
-Druga część wypowiedzi drugiej postaci po wprowadzeniu na salę.
-Trzecia część wypowiedzi drugiej postaci po wprowadzeniu na salę.
+Ja?!! NIGDY!
+N.I.G.D.Y
+Przede wszystkim, to ona nigdy nie powiedziała, że jest taką nową sztuką!
 #
-Pierwsza część odpowiedzi na pytanie pierwsze.
-Druga część odpowiedzi na pytanie pierwsze.
+Oczywiście, jako kto inny miałbym się podawać?
+Czasem mam inny nick jak to w internecie...ale to zawsze ja!
 #
-Pierwsza część odpowiedzi na pytanie drugie.
-Druga część odpowiedzi na pytanie drugie.
+Ja to już znam ją długo! Conajmniej dwa lata!
+Albo więcej! I nigdy problemu nie było!
 #
-Imię drugiej postaci
+Cathan Fisher
 #
-Pytanie pierwsze 2
+Tożsamość?
 #
-Pełne pytanie pierwsze dla drugiej postaci.
+Czy podawał się pan swoim oficialnym imieniem - Cathan Fisher na portalach i w wiadomościach z pokrzywdzoną?
 #
-Pytanie drugie 2
+Znajomość?
 #
-Pełne pytanie drugie dla drugiej postaci.
+Ile trwa znajomość pana z oskażoną?
 #
-W jednej linii, wszystkie informacje ciągłym tekstem dotyczące akt prawnych drugiej postaci, wszystko trafia tutaj.
+Oskarżony,  zabawka ,,Gumowy Sum". Ubrany w biały podkoszulek. Twierdzi, że doszło do nieporozumienia i nie przyznaje się do popełnienia zbrodni.
+#
+Czerwone oczy\n Lekki zarost i wąs\n Zdenerwowany wyraz twarzy
+#
+Prokuratura oskarża Cathana Fishera, o popełnienie przestępstwa pisania w nie odpowiedni sposób z zabawką w okresie gwarancyjnym, podając się jednocześnie za kogoś innego. Oskarżenie zostało wprowadzone przez osobę prywatną i jednocześnie poszkodowaną.
+#
+Screeny rozmów oskarżonego z poszkodowaną z potwierdzeniem wieku poszkodowanej
+#
+1
+#
+Pierwsza część wypowiedzi sędziego przy starcie.
+Druga część wypowiedzi sędziego przy starcie.
+Trzecia część wypowiedzi sędziego przy starcie.
+#
+Wysoki sądzie... Być może najlepszym kierowcom nie jestem, ale jedyne co tutaj ucierpiało to moja cudowna twarz!!
+Widzicie ją!? Patrzcie co oni mi zrobili!
+Albo nie...Nie patrzcie na mnie, ja sobie nie życzę! Pozwę was wszystkich!
+#
+Wpadłam w jakieś okropne kartony ale to bez znaczenia!
+MOJA TWARZ!!!
+Jedyne co powinno mieć znaczenie! To oni mi to zrobili!
+#
+Kierowałam oczywiście różową Szkodą Fobią, ale co się z tym autem stało?
+Oprócz tego, że dzięki niemu mam teraz tą okropną bliznę...to chyba nic.
+Nie znam sie lol
+#
+Johanna Mostowa
+#
+Uszkodzenia?
+#
+Jak uszkodziła pani samochód podczas egzaminu?
+#
+Auto?
+#
+Co dokładnie stało się z autem podczas wypadku?
+#
+Oskarżona, zabawka ,,Szmaciana Lalka". Oskarżona zaprzecza popełnieniu zbrodni. Miała 12 niezaliczonych egzaminów praktycznych w Ośrodku Prawa Jazdy 
+#
+Stłuczona głowa\n Histeryczka
+#
+Oskarżona, dnia zdawania egzaminu prawa jazdy, w obecności świadków spowodowała wypadek bez udziału osób trzecich, narażając tym samym mienie oskarżyciela prywatnego, zarysowując auto. Sama ucierpiała w wypadku. Oskarżyciel wnosi o zapłatę za szkody.
+#
+Wypis ze szpitala oskarżonej\n Zarysowane auto\n Nagranie z auta
 #
 0
+#
+Pierwsza część wypowiedzi sędziego przy starcie.
+Druga część wypowiedzi sędziego przy starcie.
+Trzecia część wypowiedzi sędziego przy starcie.
+#
+Naprawdę nie wiem o co cała ta afera...Kręcić dramę na moich zasięgach?
+Żałosne. Nie mam sobie nic do zarzucenia, wypadki na planie się zdarzają.
+Możecie kontaktować się z moim menadżerem.
+#
+Girl, ja jestem natural beauty…		
+Te kolce to...tylko makijaż był, pod show! Wiecie, że cameras odbierają piękności...
+#
+O! Właśnie! To wszystko ich wina!
+Ja tylko chciałam wyglądać dobrze, w końcu to puszczają w telewizji!
+I wszyscy chwalili moje błyszczące kolce, nikt nic nie powiedział...A teraz wielkie halo
+#
+Cacti B
+#
+Operacja plastyczna?
+#
+Czy potwierdza pani wykonanie operacji plastycznej, która przyczyniła się do uszkodzeń?
+#
+Procedury bezpieczeństwa?
+#
+Czy prawidłowo zostały przeprowadzone procedury bezpieczeństwa podczas programu?
+#
+Oskarżona,  zabawka ,,Kaktus". Oskarżona zaprzecza popełnieniu zbrodni. Posiada liczne kolce przez co zgodnie z opinią biegłych jest uznana za niebezpieczną.
+#
+Liczne operacje plastyczne\n Mocny makijaż\n Smukła budowa 
+#
+Oskarżona, podczas programu telewizyjnego "Taniec z Sukulentami", publicznie i w obecności świadków okaleczyła swoim własnym ciałem partnera tanecznego, jednocześnie oskarżyciela. Okaleczenie spowodowało liczne obrażenia i pobyt w szpitalu.
+#
+Akta szpitalne strony oskarżanej\n Zapis nagrania programu
+#
+1
+#
+Pierwsza część wypowiedzi sędziego przy starcie.
+Druga część wypowiedzi sędziego przy starcie.
+Trzecia część wypowiedzi sędziego przy starcie.
+#
+Wysoki sądzie! Okej, ja... Wziąłem pare porzuconych rzeczy, ale nie handlowałem nimi, na boga!
+No... Co prawda sprzedałem pare rączek, ale były niczyje tak?
+...Po prostu leżały...aaa ja bardzo potrzebuję pieniedzy, więc.... tak jakoś wyszło...
+#
+To...No błagam! Wiem, że źle zrobiłem!
+Ale...Litości! Wiecie jak trudno wyżywić całą rodzinę i to jeszcze z budowy?!
+Kto by nie skorzystał z takiej okazji! Nic nikomu nie zrobiłem, chciałem dobrze dla rodziny!
+#
+To...No błagam! Wiem, że źle zrobiłem!
+Ale...Litości! Wiecie jak trudno wyżywić całą rodzinę i to jeszcze z budowy?!
+Kto by nie skorzystał z takiej okazji! Nic nikomu nie zrobiłem, chciałem dobrze dla rodziny!
+#
+Jan Kowalski
+#
+Wygląd?
+#
+Czy potwierdza pan wzięcie paru znalezionych sztuk organów dla własnych...
+korzyści
+#
+Zgłoszenie?
+#
+Dlaczego nie zdecydował się Pan na zgłoszenie znalezionych części?
+#
+Oskarżona,  zabawka ,,Kaktus". Oskarżona zaprzecza popełnieniu zbrodni. Posiada liczne kolce przez co zgodnie z opinią biegłych jest uznana za niebezpieczną.
+#
+Liczne operacje plastyczne\n Mocny makijaż\n Smukła budowa 
+#
+Oskarżona, podczas programu telewizyjnego "Taniec z Sukulentami", publicznie i w obecności świadków okaleczyła swoim własnym ciałem partnera tanecznego, jednocześnie oskarżyciela. Okaleczenie spowodowało liczne obrażenia i pobyt w szpitalu.
+#
+Akta szpitalne strony oskarżanej\n Zapis nagrania programu
+#
+1
 #
