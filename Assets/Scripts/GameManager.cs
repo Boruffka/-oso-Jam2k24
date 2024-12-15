@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // blackout
+    //[SerializeField] private GameObject blackout;
 
     // music
     [SerializeField] private AudioSource musicPlayer;
@@ -80,6 +81,9 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        // blackout
+        //blackout = GameObject.Find("Blackout");
+
         // data
         scoreCounter = 0;
         dialogueStageNumber = 0;
@@ -142,6 +146,8 @@ public class GameManager : MonoBehaviour
         pageOnePhotoSprite.texture = mugshotData[chosenCharacter];
         characterSprite.texture = spriteOneData[chosenCharacter];
         otherSoundsPlayer.clip = soundData[chosenCharacter];
+
+        //StartCoroutine(FadeIn(blackout));
     }
 
     void Update()
@@ -478,7 +484,7 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         currentlyTyping = true;
-                        typingText = StartCoroutine(UpdateTextField(dialogueText, "S¹d po zapoznaniu siê z obron¹ oskar¿onego," + characterData[chosenCharacter].characterName + " , dochodzi do wniosku, i¿ oskar¿ony ponosi odpowiedzialnoœæ za zaistnia³y incydent.", textRevealSpeed));
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, "Nie leæ ze mn¹ w klocki... Sk³adanie fa³szywych zeznañ jest fa³szywe, a ty lecisz do zsypu!", textRevealSpeed));
                         guiltyStamp.SetActive(true);
                     }
                 }
@@ -508,7 +514,7 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         currentlyTyping = true;
-                        typingText = StartCoroutine(UpdateTextField(dialogueText, "S¹d po zapoznaniu siê z obron¹ oskar¿onego," + characterData[chosenCharacter].characterName + " , dochodzi do wniosku, i¿ oskar¿ony nie ponosi odpowiedzialnoœci za zaistnia³y incydent.", textRevealSpeed));
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, "Przekona³eœ mnie! Wracaj na pó³kê!", textRevealSpeed));
                         innocentStamp.SetActive(true);
                     }
                 }
@@ -538,7 +544,7 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         currentlyTyping = true;
-                        typingText = StartCoroutine(UpdateTextField(dialogueText, "Oskar¿ony uznany jest za winnego zarzucanego czynu.", textRevealSpeed));
+                        typingText = StartCoroutine(UpdateTextField(dialogueText, "Oskar¿ony uznany jest za winnego zarzucanego czynu!", textRevealSpeed));
                     }
                 }
                 if (typedOnce && currentlyTyping == false)
@@ -661,6 +667,27 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("test");
     }
+
+    IEnumerator FadeIn(GameObject image)
+    {
+        for(int i =0;i<255;i++)
+        {
+            image.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, i);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    
+    IEnumerator FadeOut(GameObject image)
+    {
+        for(int i = 255;i > 0;i--)
+        {
+            image.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, i);
+            yield return new WaitForSeconds(1f);
+        }
+        yield return null;
+    }
+
+
 
     IEnumerator MoveTo(Transform fromPosition, Vector3 toPosition, float duration)
     {
